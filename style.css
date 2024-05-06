@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html,
+body {
+  min-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+.header--banner {
+  position: relative;
+  width: 80%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.header--banner img {
+  width: 200px;
+  height: 50px;
+  display: block;
+  object-fit: cover;
+}
+
+.ullist {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.il--item:hover {
+  color: rgb(255, 0, 128);
+}
+.accout--control {
+  width: 250px;
+  display: flex;
+  align-items: center;
+}
+.accout--control img {
+  width: 35px;
+  height: 35px;
+  border-radius: 100rem;
+}
+.accout--control ion-icon {
+  color: black;
+}
+.cart {
+  width: 500px;
+  height: 800px;
+  right: 0;
+  transform: translateX(-10%);
+  position: absolute;
+  background-color: pink;
+  border-radius: 20px;
+  top: 50px;
+  display: none;
+}
+.cart::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  left: 20%;
+  border-top: 10px solid transparent;
+  border-right: 10px solid pink;
+  border-bottom: 10px solid pink;
+  border-left: 10px solid transparent;
+}
+.active {
+  display: block;
+}
