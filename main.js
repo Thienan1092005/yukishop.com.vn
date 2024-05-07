@@ -1,4 +1,5 @@
 const accountControlElement = document.querySelector(".accout--control");
+const adminControlpaner = document.querySelector(".adminControlpaner");
 const cart = document.querySelector(".cart");
 let login = false;
 
@@ -10,15 +11,15 @@ const renderAccountControl = () => {
   } else {
     accountControlElement.innerHTML = `
       <button onclick="activeCart()">Checkout</button>
-      <a target="_blank" rel="noopener" href="./admin/admincontrol.html">
-        <img src="./assets/mylove.jpg" alt="" />
-      </a>
+      <img onclick ="activeAccoutCtrl()" src="./assets/mylove.jpg" alt="" />
     `;
   }
 };
 
+const activeAccoutCtrl = () => {
+  adminControlpaner.classList.toggle("activeFlex");
+};
 const activeCart = () => {
-  console.log(123);
   cart.classList.toggle("active");
 };
 
@@ -31,6 +32,21 @@ const setLogin = () => {
   });
   renderAccountControl();
 };
+const setLogOut = () => {
+  login = false;
+  Swal.fire({
+    title: "Thành công!",
+    text: "Đăng xuất thành công",
+    icon: "success",
+  });
+  renderAccountControl();
+  removePanel();
+};
 
-cart.classList.remove("active");
+const removePanel = () => {
+  cart.classList.remove("active");
+  adminControlpaner.classList.remove("activeFlex");
+};
+adminControlpaner.addEventListener("click", setLogOut);
 renderAccountControl();
+removePanel();

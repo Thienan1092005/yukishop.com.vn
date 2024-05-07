@@ -22,6 +22,7 @@ body {
   height: 50px;
   display: block;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .ullist {
@@ -47,9 +48,9 @@ body {
   color: black;
 }
 .cart {
-  width: 500px;
-  height: 800px;
-  right: 0;
+  width: 400px;
+  height: 700px;
+  right: 150px;
   transform: translateX(-10%);
   position: absolute;
   background-color: pink;
@@ -63,12 +64,32 @@ body {
   height: 0;
   position: absolute;
   transform: translateY(-50%);
-  left: 20%;
+  left: 35%;
   border-top: 10px solid transparent;
   border-right: 10px solid pink;
   border-bottom: 10px solid pink;
   border-left: 10px solid transparent;
 }
+.adminControlpaner {
+  display: none;
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  right: 240px;
+  top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.adminControlpaner a {
+  color: black;
+}
 .active {
   display: block;
+}
+.activeFlex {
+  display: flex;
 }
