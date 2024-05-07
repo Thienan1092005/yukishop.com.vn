@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css-rs.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="respontsive.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
@@ -32,13 +33,367 @@
         </ul>
         <div class="accout--control"></div>
       </nav>
-      <section class="cart"></section>
+      <!-- end a nav  -->
+      <!-- some popup  -->
+      <section class="cart">
+        <div class="cart-content">
+          <div class="item">
+            <ion-icon
+              class="close--produce"
+              name="close-circle-outline"
+            ></ion-icon>
+            <img
+              src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+              alt=""
+            />
+            <div class="cart--produce--name">
+              Iphone 14 Pro Max 128GB VNA chính hãng
+            </div>
+            <div class="cart--produce--price">26.969.000</div>
+          </div>
+        </div>
+        <div class="total">
+          <p>total: <span>30.000.000 vnd </span></p>
+        </div>
+        <button id="checkout">checkout</button>
+        <button id="clear">clear</button>
+      </section>
+      <!-- end a carrt  -->
       <section class="adminControlpaner">
-        <p>Logout</p>
+        <p class="Logout">Logout</p>
         <a rel="noopener" target="_blank" href="./admin/admincontrol.html"
           >Admin</a
         >
       </section>
+      <!-- end some popUp -->
+      <!-- container -->
+      <section class="container">
+        <section class="biggerBanner">
+          <div class="biggerBanner--content">
+            <span class="title">AUS ROG STRIX SCAR SERIS</span>
+            <h2 class="biggerBanner--detal">
+              Asus ROG G16 là sự kết hợp hoàn hảo giữa sức mạnh và phong cách
+              trong thế giới game. Với vi xử lý và card đồ họa hàng đầu, ROG G16
+              đem đến hiệu suất vượt trội cho mọi trải nghiệm game
+            </h2>
+            <div class="moreInfomation">
+              <div class="box">
+                <img
+                  src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/kv/windows.svg"
+                  alt="win11"
+                />
+                <p>
+                  Tận hưởng hiệu năng gaming mượt mà trên Windows 11 Home với
+                  ROG Strix G16
+                </p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/kv/cpu.svg"
+                  alt="win11"
+                />
+                <p>
+                  CPU lên tới Intel® Core™ i9 14900HX với 24 nhân và 32 luồng,
+                  TDP lên tới 65W
+                </p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/kv/gpu.svg"
+                  alt="win11"
+                />
+                <p>GPU lên đến NVIDIA® GeForce RTX™ 4060 với TGP tối đa 175W</p>
+              </div>
+              <div class="box">
+                <img
+                  class="img-1"
+                  src="	https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/kv/nebula.svg"
+                  alt="win11"
+                />
+                <p>
+                  Màn hình 16-inch chuẩn ROG Nebula lên đến 2.5K 240Hz tỷ lệ
+                  khung hình 16:10 và 100% DCI-P3
+                </p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/kv/liquid-metal.svg"
+                  alt="win11"
+                />
+                <p>
+                  Chơi game mượt mà và mát mẻ nhờ công nghệ tản nhiệt 3 quạt
+                </p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/kv/dolby-vision-atmos.svg"
+                  alt="win11"
+                />
+                <p>Hỗ trợ Dolby Vision và Dolby Atmos cho nội dung đắm chìm</p>
+              </div>
+            </div>
+            <div class="spooner">
+              <img
+                class="img-1"
+                src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img-webp/intel-core-i9.webp"
+                alt=""
+              />
+              <img
+                class="img-2"
+                src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/nvidia-logo.svg"
+                alt=""
+              />
+              <img
+                class="img-3"
+                src="https://dlcdnwebimgs.asus.com/files/media/E16CF64B-339C-4BE7-A03A-C49389ABCF43/v1/img/xbox-game-pass.svg"
+                alt=""
+              />
+            </div>
+            <button class="buyNow">Buy Now</button>
+          </div>
+          <img
+            src="./assets/roglaptop.jpg"
+            alt="roglaptop"
+            class="biggerBanner--img"
+          />
+        </section>
+        <!-- end bigger banner  -->
+        <section class="produts">
+          <div class="header--img">
+            <img
+              src="https://www.gizmochina.com/wp-content/uploads/2023/09/Titanium-iPhone-15-Pro.jpg"
+              alt=""
+            />
+            <img
+              src="https://mahajanelectronics.com/cdn/shop/articles/Mahajan_banner_18.jpg?v=1705637899"
+              alt=""
+            />
+          </div>
+          <!-- end heaer img  -->
+          <div class="produce--main">
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <div class="produce--boxed">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png"
+                alt=""
+                class="produce--img"
+              />
+              <p class="produce--price">26.696.000 VND</p>
+              <p class="produce--name">Iphone 14 Pro max</p>
+              <div class="rate">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <span>5/5</span>
+              </div>
+              <button class="produce--btn__buy">Buy Now</button>
+            </div>
+            <!-- end produce box  -->
+          </div>
+          <!-- end produce main  -->
+        </section>
+        <!-- end produce  -->
+      </section>
+      <!-- end container  -->
       <script src="main.js"></script>
     </body>
   </head>
