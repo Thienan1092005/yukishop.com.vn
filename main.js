@@ -1,4 +1,5 @@
 const accountControlElement = document.querySelector(".accout--control");
+const container = document.querySelector(".container");
 const adminControlpaner = document.querySelector(".adminControlpaner");
 const cart = document.querySelector(".cart");
 let login = false;
@@ -31,6 +32,7 @@ const setLogin = () => {
     icon: "success",
   });
   renderAccountControl();
+  container.classList.remove("disable");
 };
 const setLogOut = () => {
   login = false;
@@ -45,8 +47,9 @@ const setLogOut = () => {
 
 const removePanel = () => {
   cart.classList.remove("active");
+  container.classList.add("disable");
   adminControlpaner.classList.remove("activeFlex");
 };
-adminControlpaner.addEventListener("click", setLogOut);
+document.querySelector(".Logout").addEventListener("click", setLogOut);
 renderAccountControl();
 removePanel();
