@@ -19,17 +19,17 @@ const renderPhone = () => {
   tbodyctn.innerHTML = phoneData
     .map((phone) => {
       return `<tr>
-    <td>${phone.id}</td>
-    <td>${phone.phoneName}</td>
-    <td>${phone.phonePrice}</td>
-    <td>${phone.phoneStar}</td>
-    <td>
-      <button onclick="handleDelete(${phone.id})" >delete</button>
-      <button onclick = "handleEdit(${phone.id})">Edit</button>
-    </td>
-  </tr>`;
+                <td>${phone.id}</td>
+                <td style = "text-align: left">${phone.phoneName}</td>
+                <td>${phone.phonePrice}</td>
+                <td>${phone.phoneStar}</td>
+                <td>
+                  <button onclick="handleDelete(${phone.id})" >delete</button>
+                  <button onclick = "handleEdit(${phone.id})">Edit</button>
+                </td>
+              </tr>`;
     })
-    .join();
+    .join("");
 };
 const handleDelete = async (id) => {
   await axios({
@@ -55,7 +55,11 @@ const handleEdit = async (id) => {
   selectedID = id;
 };
 const handleUpdate = async () => {
-  const respoint = await axios({
+  if (selectedID == null) {
+    alert("vui lòng chọn sản phẩm cần chỉnh sửa");
+    return;
+  }
+  await axios({
     method: "PUT",
     url: `https://662b63d6de35f91de1581587.mockapi.io/yukishopap/${selectedID}`,
     data: {
@@ -66,8 +70,23 @@ const handleUpdate = async () => {
     },
   });
   getData();
+  selectedID = null;
+  name.value = "";
+  price.value = "";
+  imgSrc.value = "";
+  rate.value = "";
+  getData();
 };
 const addItem = async () => {
+  if (
+    name.value === "" ||
+    price.value === "" ||
+    imgSrc.value === "" ||
+    rate.value === ""
+  ) {
+    alert("vui lòng nhập các trường thông tin đầy đủ");
+    return;
+  }
   await axios({
     method: "POST",
     url: "https://662b63d6de35f91de1581587.mockapi.io/yukishopap",
