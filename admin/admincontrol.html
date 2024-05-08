@@ -3,9 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <p>hello i am admin</p>
+    <section class="controler">
+      <table class="table">
+        <tr>
+          <td>id produce</td>
+          <td>Produce name</td>
+          <td>Produce Price</td>
+          <td>Rate</td>
+          <td colspan="2">Action</td>
+        </tr>
+        <tbody class="tbodyctn"></tbody>
+      </table>
+    </section>
+    <button id="btnopenform">Add Produce</button>
+    <div class="additem">
+      <form id="form--add" action="">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="" id="name" />
+        </div>
+        <div>
+          <label for="price">Price</label>
+          <input type="text" name="" id="price" />
+        </div>
+        <div>
+          <label for="img">img src</label>
+          <input type="text" name="" id="img" />
+        </div>
+        <div>
+          <label for="rate">rate</label>
+          <input type="text" name="" id="rate" />
+        </div>
+        <div>
+          <button class="btnaddform">Add</button>
+          <button class="btnExit">Exit</button>
+          <button class="btnUpdate">Update</button>
+        </div>
+      </form>
+    </div>
+    <script src="admin.js"></script>
   </body>
 </html>

@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html,
+body {
+  background-size: cover;
+  background-image: url("https://i.pinimg.com/736x/ea/7f/45/ea7f4562cb5803ab66107cc915d45f76.jpg");
+  width: 100%;
+  height: 100%;
+  background-color: #d6deff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.controler {
+  margin: 0 auto;
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background-color: rgb(255, 255, 255, 10);
+}
+.table {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  border-color: black;
+}
+.table button {
+  width: 78px;
+  height: 30px;
+  background-color: rgb(255, 0, 162);
+  border-radius: 8px;
+  border: none;
+}
+#btnopenform {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 52px;
+  background-color: rgb(255, 0, 162);
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+#form--add {
+  align-items: center;
+  row-gap: 25px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 15px 0 15px 0;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  justify-content: space-around;
+  height: 300px;
+  border-radius: 20px;
+  background-color: pink;
+}
+#form--add input {
+  border: none;
+  width: 350px;
+  height: 30px;
+  background-color: white;
+  outline: none;
+  border-radius: 20px;
+}
+.btnaddform {
+  width: 150px;
+  height: 40px;
+  outline: none;
+  color: white;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  border-radius: 25px;
+  background-color: rgb(255, 0, 162);
+}
+.btnExit {
+  width: 150px;
+  height: 40px;
+  outline: none;
+  color: white;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  border-radius: 25px;
+  background-color: rgb(255, 0, 0);
+}
+.additem {
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+.btnUpdate {
+  width: 150px;
+  height: 40px;
+  outline: none;
+  color: white;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  border-radius: 25px;
+  background-color: rgb(255, 149, 0);
+}
