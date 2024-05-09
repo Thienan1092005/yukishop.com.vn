@@ -1,0 +1,39 @@
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .controler {
+    width: 80%;
+    margin: auto;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .additem {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .controler {
+    width: 100%;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .additem {
+    width: 100%;
+  }
+
+  #form--add div {
+    margin-bottom: 10px;
+  }
+
+  .btnaddform,
+  .btnExit,
+  .btnUpdate {
+    width: 100%;
+  }
+}

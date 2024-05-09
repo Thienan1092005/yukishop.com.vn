@@ -4,6 +4,20 @@ const adminControlpaner = document.querySelector(".adminControlpaner");
 const cart = document.querySelector(".cart");
 let login = false;
 
+const convertPriceToNumber = (priceString) => {
+  return parseInt(priceString.replace(/\s|₫/g, ""));
+};
+
+const formatPriceToString = (price) => {
+  return new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  })
+    .format(price)
+    .replace("₫", "")
+    .replace(/\D/g, "")
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+};
 const renderAccountControl = () => {
   if (!login) {
     accountControlElement.innerHTML = `
@@ -63,10 +77,8 @@ const getData = async () => {
     url: "https://662b63d6de35f91de1581587.mockapi.io/yukishopap",
   });
   phoneData = res.data;
-  console.log(phoneData);
   renderPhone();
 };
-
 const renderPhone = () => {
   produceMain.innerHTML = phoneData
     .map((phone) => {
@@ -77,23 +89,80 @@ const renderPhone = () => {
         }
       }
       return `<div class="produce--boxed">
-        <img
-          src="${
-            phone.phoneImg ||
-            `https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__4.png`
-          }"
-          alt=""
-          class="produce--img"
-        />
-        <p class="produce--price">${phone.phonePrice} VND</p>
-        <p class="produce--name">${phone.phoneName}</p>
-        <div class="rate">
-          ${stars}
-          <span>5/5</span>
+      <img
+        src="${phone.phoneImg}"
+        alt=""
+        class="produce--img"
+      />
+      <div class="produce--content">
+        <h1 class="produce--name">
+           ${phone.phoneName}
+        </h1>
+        <h2 class="produce--price">${formatPriceToString(
+          phone.phonePrice
+        )} ₫</h2>
+        <div class="addtocart">
+          <div class="stars">
+            ${stars}
+          </div>
+          <button onclick ="addToCart(${
+            phone.id
+          })" class="produce--btn__buy">Add to card</button>
         </div>
-        <button class="produce--btn__buy">Buy Now</button>
-      </div>`;
+      </div>
+      <!-- end a contetn produce  -->
+    </div>`;
     })
     .join("");
 };
 getData();
+//cart control//
+
+const cartItem = [];
+
+const addToCart = async (id) => {
+  try {
+    const response = await axios.get(
+      `https://662b63d6de35f91de1581587.mockapi.io/yukishopap/${id}`
+    );
+    const phone = response.data;
+    const existingItem = cartItem.find((item) => item.id == id);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cartItem.push({
+        ...phone,
+        quantity: 1,
+      });
+    }
+    const cartTable = document.querySelector(".cart--item__table");
+    cartTable.innerHTML = cartItem
+      .map((item) => {
+        return `<tr>
+              <td>
+                <img src="${item.phoneImg}" alt="" width="100" height="150" />
+              </td>
+              <td>${item.phoneName}</td>
+              <td>${formatPriceToString(item.phonePrice)}</td>
+              <td>
+                <div class="quantity">
+                  <button class="quantity-btn" data-action="decrease">-</button>
+                  <input type="text" class="quantity-input" value="${
+                    item.quantity
+                  }" />
+                  <button class="quantity-btn" data-action="increase">+</button>
+                </div>
+              </td>
+              <td>${formatPriceToString(
+                item.quantity * convertPriceToNumber(item.phonePrice)
+              )}</td>
+            </tr>`;
+      })
+      .join("");
+  } catch (error) {
+    console.error("Error adding to cart:", error);
+  }
+  console.log(cartItem);
+  document.querySelector(".cart--item--number").innerText =
+    cartItem.length + " Item";
+};

@@ -47,6 +47,11 @@
   .header--img img {
     width: 60%;
   }
+  .produce--main {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+  }
 }
 @media screen and (max-width: 767px) {
   .header--banner {
@@ -73,17 +78,23 @@
     height: 200px;
   }
   .produce--main {
+    position: relative;
+    margin-top: 0;
     width: 100%;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 0px;
   }
   .biggerBanner--img {
     height: 500px;
+    object-fit: cover;
   }
   .biggerBanner {
     height: 1400px;
   }
   .ullist {
     display: none;
+  }
+  .produce--boxed {
+    font-size: 15px;
   }
 }
