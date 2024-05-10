@@ -95,12 +95,18 @@ body {
   justify-content: space-between;
 }
 .cart--item__table {
+  text-wrap: wrap;
   position: relative;
   margin-top: 25px;
   font-weight: 600;
   font-size: 15px;
   width: 100%;
   text-wrap: wrap;
+  border: 1px solid rgb(191, 191, 191);
+}
+.table--item__name {
+  width: 300px;
+  line-height: 20px;
 }
 .quantity {
   display: flex;
