@@ -162,13 +162,21 @@ const renderCard = () => {
     allPrice +=
       cartItem[i].quantity * convertPriceToNumber(cartItem[i].phonePrice);
   }
-  const totalPrice = formatPriceToString(allPrice) + "₫";
-  document.querySelector(".totalItem").innerHTML = totalPrice;
-  document.querySelector(".cost--price").innerHTML = totalPrice;
+  const totalPrice = allPrice;
+  let thue = totalPrice * 0.1;
+  let giaCuoiCung = allPrice + thue;
+  document.querySelector(".totalItem").innerHTML =
+    formatPriceToString(totalPrice) + "₫";
+  document.querySelector(".cost--price").innerHTML =
+    formatPriceToString(totalPrice) + "₫";
   document.querySelector(".thue--price").innerHTML =
-    formatPriceToString(convertPriceToNumber(totalPrice) * 0.1) + "₫";
-  document.querySelector(".totaiall--price").innerHTML =
-    formatPriceToString(allPrice + allPrice * 0.1 - saleCode) + "₫";
+    formatPriceToString(thue) + "₫";
+  if (giaCuoiCung <= saleCode) {
+    document.querySelector(".totaiall--price").innerHTML = "0" + "₫";
+  } else {
+    document.querySelector(".totaiall--price").innerHTML =
+      formatPriceToString(giaCuoiCung - saleCode) + "₫";
+  }
 };
 
 const addToCart = async (id) => {
@@ -215,7 +223,12 @@ const decrease = (id) => {
 };
 
 document.querySelector(".apply").addEventListener("click", () => {
-  saleCode = 5000000;
+  const salecodeEle = document.querySelector("#salecode");
+  if (salecodeEle.value == "JackBoCon") {
+    saleCode = 5000000;
+  } else {
+    saleCode = 0;
+  }
   renderCard();
 });
 document.querySelector("#finalcheckout").addEventListener("click", () => {
