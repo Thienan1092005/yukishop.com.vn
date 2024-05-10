@@ -68,6 +68,7 @@ const removePanel = () => {
 document.querySelector(".Logout").addEventListener("click", setLogOut);
 renderAccountControl();
 removePanel();
+
 // phone rendering//
 const produceMain = document.querySelector(".produce--main");
 let phoneData = [];
@@ -118,7 +119,57 @@ const renderPhone = () => {
 getData();
 //cart control//
 
-const cartItem = [];
+let cartItem = [];
+let saleCode = 0;
+
+const renderCard = () => {
+  const cartTable = document.querySelector(".cart--item__table");
+  cartTable.innerHTML = cartItem
+    .map((item) => {
+      let totalPrice = formatPriceToString(
+        item.quantity * convertPriceToNumber(item.phonePrice)
+      );
+      return `<tr>
+            <td>
+              <img src="${item.phoneImg}" alt="" width="100" height="150" />
+            </td>
+            <td class ="table--item__name">${item.phoneName}</td>
+            <td>${formatPriceToString(item.phonePrice)}</td>
+            <td>
+              <div class="quantity">
+                <button class="quantity-btn" onclick="decrease(${
+                  item.id
+                })">-</button>
+                <input type="text" class="quantity-input" value="${
+                  item.quantity
+                }" />
+                <button class="quantity-btn"onclick="increase(${
+                  item.id
+                })">+</button>
+              </div>
+            </td>
+            <td>${totalPrice}</td>
+          </tr>`;
+    })
+    .join("");
+  let allTotal = 0;
+  for (let i = 0; i < cartItem.length; i++) {
+    allTotal += cartItem[i].quantity;
+  }
+  document.querySelector(".cartItemNumber").innerHTML = allTotal;
+  let allPrice = 0;
+  for (let i = 0; i < cartItem.length; i++) {
+    allPrice +=
+      cartItem[i].quantity * convertPriceToNumber(cartItem[i].phonePrice);
+  }
+  const totalPrice = formatPriceToString(allPrice) + "₫";
+  document.querySelector(".totalItem").innerHTML = totalPrice;
+  document.querySelector(".cost--price").innerHTML = totalPrice;
+  document.querySelector(".thue--price").innerHTML =
+    formatPriceToString(convertPriceToNumber(totalPrice) * 0.1) + "₫";
+  document.querySelector(".totaiall--price").innerHTML =
+    formatPriceToString(allPrice + allPrice * 0.1 - saleCode) + "₫";
+};
 
 const addToCart = async (id) => {
   try {
@@ -135,34 +186,41 @@ const addToCart = async (id) => {
         quantity: 1,
       });
     }
-    const cartTable = document.querySelector(".cart--item__table");
-    cartTable.innerHTML = cartItem
-      .map((item) => {
-        return `<tr>
-              <td>
-                <img src="${item.phoneImg}" alt="" width="100" height="150" />
-              </td>
-              <td>${item.phoneName}</td>
-              <td>${formatPriceToString(item.phonePrice)}</td>
-              <td>
-                <div class="quantity">
-                  <button class="quantity-btn" data-action="decrease">-</button>
-                  <input type="text" class="quantity-input" value="${
-                    item.quantity
-                  }" />
-                  <button class="quantity-btn" data-action="increase">+</button>
-                </div>
-              </td>
-              <td>${formatPriceToString(
-                item.quantity * convertPriceToNumber(item.phonePrice)
-              )}</td>
-            </tr>`;
-      })
-      .join("");
+    renderCard();
   } catch (error) {
     console.error("Error adding to cart:", error);
   }
-  console.log(cartItem);
   document.querySelector(".cart--item--number").innerText =
     cartItem.length + " Item";
 };
+
+const increase = (id) => {
+  const selectedItem = cartItem.find((item) => {
+    return item.id == id;
+  });
+  selectedItem.quantity++;
+  renderCard();
+};
+
+const decrease = (id) => {
+  const selectedItem = cartItem.find((item) => {
+    return item.id == id;
+  });
+  if (selectedItem.quantity <= 0) {
+    return;
+  } else {
+    selectedItem.quantity--;
+  }
+  renderCard();
+};
+
+document.querySelector(".apply").addEventListener("click", () => {
+  saleCode = 5000000;
+  renderCard();
+});
+document.querySelector("#finalcheckout").addEventListener("click", () => {
+  cartItem = [];
+  saleCode = 0;
+  renderCard();
+  activeCart();
+});
